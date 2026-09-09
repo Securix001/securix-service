@@ -80,6 +80,12 @@ if (teamGrid && ![...teamGrid.querySelectorAll('h3')].some(member => member.text
   teamGrid.insertAdjacentHTML('beforeend', '<article class="team-card team-card-initials reveal visible"><div class="team-photo"><div class="initials">JG</div><span>13</span></div><div class="team-info"><h3>Jagan</h3><p>Lead Developer</p></div></article>');
 }
 
+const yaseenCard = [...document.querySelectorAll('.team-card')].find(card => card.querySelector('h3')?.textContent === 'Mohamed Yaseen');
+if (yaseenCard) {
+  yaseenCard.classList.remove('team-card-initials');
+  yaseenCard.querySelector('.team-photo').innerHTML = '<img src="mohamed-yaseen.png" alt="Mohamed Yaseen, Lead Designer"><span>12</span>';
+}
+
 const projectLinks = document.querySelectorAll('.project-card .text-link');
 const projectRepositories = [
   'https://github.com/Venkatesan-2007/mediai',
