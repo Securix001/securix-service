@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://securix001.github.io/securix-service/sitemap.xml
