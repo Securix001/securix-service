@@ -76,8 +76,18 @@ const pravinNewImage = document.querySelector('.team-card img[src="pravin-new.jp
 if (pravinNewImage) pravinNewImage.closest('.team-card').classList.add('team-card-pravin');
 
 const teamGrid = document.querySelector('.team-grid');
-if (teamGrid && ![...teamGrid.querySelectorAll('h3')].some(member => member.textContent === 'Jagan')) {
-  teamGrid.insertAdjacentHTML('beforeend', '<article class="team-card team-card-initials reveal visible"><div class="team-photo"><div class="initials">JG</div><span>13</span></div><div class="team-info"><h3>Jagan</h3><p>Lead Developer</p></div></article>');
+if (teamGrid && ![...teamGrid.querySelectorAll('h3')].some(member => member.textContent === 'Jegan' || member.textContent === 'Jagan')) {
+  teamGrid.insertAdjacentHTML('beforeend', '<article class="team-card reveal visible"><div class="team-photo"><img src="jegan.png" alt="Jegan, Lead Developer"><span>13</span></div><div class="team-info"><h3>Jegan</h3><p>Lead Developer</p></div></article>');
+}
+
+const jeganCard = [...document.querySelectorAll('.team-card')].find(card => {
+  const name = card.querySelector('h3')?.textContent;
+  return name === 'Jegan' || name === 'Jagan';
+});
+if (jeganCard) {
+  jeganCard.classList.remove('team-card-initials');
+  jeganCard.querySelector('.team-photo').innerHTML = '<img src="jegan.png" alt="Jegan, Lead Developer"><span>13</span>';
+  jeganCard.querySelector('h3').textContent = 'Jegan';
 }
 
 const yaseenCard = [...document.querySelectorAll('.team-card')].find(card => card.querySelector('h3')?.textContent === 'Mohamed Yaseen');
